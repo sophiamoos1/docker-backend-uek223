@@ -1,0 +1,9 @@
+name: test-pipline
+run-name: something was commitet
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: Hello World!
+  
