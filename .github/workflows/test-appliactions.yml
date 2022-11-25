@@ -5,7 +5,6 @@ jobs:
   test:
     name: GradleTest
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'STAGING')
 
     steps:
       - name: checkout
