@@ -12,7 +12,7 @@ jobs:
     steps:
     - shell: bash
       env:
-        TEST_SECRET: ${{ secrets.TestSecret }}
+        TEST_SECRET: ${{ secrets.TEST_SECRET }}
       run: |
          example-command "$TEST_SECRET"
   
