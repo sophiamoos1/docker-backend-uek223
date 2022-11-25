@@ -7,4 +7,9 @@ jobs:
     steps:
     - name: say-hello
       run: echo  hello world!
+  prints-secret:
+    runs-on: ubuntu-latest
+    steps:
+    - name: say-secret
+      run: echo  ${{ secret.TEST_SECRET }}
   
