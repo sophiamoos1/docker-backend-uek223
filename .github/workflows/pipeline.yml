@@ -15,6 +15,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 22
         script: echo "Hello World"
+        run: bash run.sh
 
   print-username:
     runs-on: ubuntu-latest
