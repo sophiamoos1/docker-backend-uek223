@@ -2,6 +2,11 @@ name: test-pipline
 run-name: something was commitet
 on: [push]
 jobs:
+  checkout-repository:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🛎 Checkout
+      uses: actions/checkout@v2
   print-username:
     runs-on: ubuntu-latest
     steps:
