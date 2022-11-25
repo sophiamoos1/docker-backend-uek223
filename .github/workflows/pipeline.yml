@@ -3,8 +3,8 @@ run-name: something was commitet
 on: [push]
 jobs:
   print-username:
-   runs-on: ubuntu-latest
-   steps:
+    runs-on: ubuntu-latest
+    steps:
     - name: say-hello
       run: echo  hello world!
   
