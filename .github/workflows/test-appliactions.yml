@@ -2,7 +2,7 @@ name: run tests
 run-name: test my application
 on: [push]
 jobs:
-  build:
+  test:
     name: GradleTest
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,7 @@ jobs:
           distribution: 'adopt'
           
       - name: Build with Gradle
-        run: ./gradle build --no-daemon
+        run: ./gradle test --no-daemon
         
       - name: Test
         run: gradle test --tests "*"
