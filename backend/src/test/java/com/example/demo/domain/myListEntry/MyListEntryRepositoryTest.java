@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+@Disabled
 @DataJpaTest
 class MyListEntryRepositoryTest {
     public MyListEntryRepository getRepository() {
@@ -20,6 +21,7 @@ class MyListEntryRepositoryTest {
 
     @Autowired
     MyListEntryRepository repository;
+
     @Disabled
     @Test
     void findByInexistingId() {
