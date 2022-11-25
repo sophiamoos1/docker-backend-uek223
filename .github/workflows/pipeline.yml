@@ -10,6 +10,9 @@ jobs:
   prints-secret:
     runs-on: ubuntu-latest
     steps:
-    - name: say-secret
-      run: echo  ${{ secret.TEST_SECRET }}
+    - shell: bash
+      env:
+        SUPER_SECRET: ${{ secrets.SuperSecret }}
+      run: |
+         example-command "$SUPER_SECRET"
   
