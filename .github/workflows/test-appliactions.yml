@@ -2,12 +2,12 @@ name: run tests
 run-name: test my application
 on: [push]
 jobs:
-  test:
+  build:
     name: GradleTest
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'STAGING')
-
     steps:
+      - name: 🛎 Checkout
+        uses: actions/checkout@v2
       - name: checkout
         uses: actions/checkout@v2
 
@@ -16,8 +16,11 @@ jobs:
         with:
           java-version: '18'
           distribution: 'adopt'
-
-      - name: Grant Permissions to gradlew
-        run: chmod +x gradlew
+          
+      - name: Build with Gradle
+        run: ./gradle build --no-daemon
+        
       - name: Test
-        run: ./gradlew test --tests "*"
+        run: gradle test --tests "*"
+      - name: Test
+        run: ./gradle test --tests "*"
