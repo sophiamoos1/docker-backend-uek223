@@ -18,9 +18,5 @@ jobs:
           distribution: 'adopt'
           
       - name: Build with Gradle
-        run: ./gradle test --no-daemon
-        
-      - name: Test
-        run: gradle test --tests "*"
-      - name: Test
-        run: ./gradle test --tests "*"
+        run: ./backend/gradlew test
+      
