@@ -7,11 +7,21 @@ jobs:
     steps:
     - name: 🛎 Checkout
       uses: actions/checkout@v2
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: echo “Hello World"
+
   print-username:
     runs-on: ubuntu-latest
     steps:
     - name: say-hello
       run: echo  hello world!
+      
   prints-secret:
     runs-on: ubuntu-latest
     steps:
