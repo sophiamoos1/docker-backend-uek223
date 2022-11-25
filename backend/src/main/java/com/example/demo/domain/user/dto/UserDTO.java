@@ -2,24 +2,28 @@ package com.example.demo.domain.user.dto;
 
 import com.example.demo.core.generic.ExtendedDTO;
 import com.example.demo.domain.role.dto.RoleDTO;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.Set;
 import java.util.UUID;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
+@AllArgsConstructor
 public class UserDTO extends ExtendedDTO {
 
-  private String firstName;
+  protected String firstName;
 
-  private String lastName;
+  protected String lastName;
 
   @Email
-  private String email;
+  protected String email;
 
   @Valid
-  private Set<RoleDTO> roles;
+  protected Set<RoleDTO> roles;
 
-  public UserDTO() {
+  protected UserDTO() {
   }
 
   public UserDTO(UUID id, String firstName, String lastName, String email, Set<RoleDTO> roles) {

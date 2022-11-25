@@ -9,6 +9,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.management.InstanceAlreadyExistsException;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserService {
@@ -19,6 +22,15 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
   public UserServiceImpl(UserRepository repository, Logger logger, PasswordEncoder passwordEncoder) {
     super(repository, logger);
     this.passwordEncoder = passwordEncoder;
+  }
+
+  public List<User> getAllUsers() {
+    return repository.findAll();
+  }
+
+  @Override
+  public User getUserById(UUID id) {
+    return repository.findById(id).orElseThrow(() -> new NoSuchElementException(String.valueOf(id)));
   }
 
   @Override

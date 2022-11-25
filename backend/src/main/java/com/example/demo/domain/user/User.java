@@ -4,6 +4,9 @@ import com.example.demo.core.generic.ExtendedEntity;
 import com.example.demo.domain.myListEntry.MyListEntry;
 import com.example.demo.domain.role.Role;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.List;
@@ -13,6 +16,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@Data
+@EqualsAndHashCode(callSuper=true)
 public class User extends ExtendedEntity {
 
   @Column(name = "first_name")
