@@ -2,11 +2,12 @@ name: run tests
 run-name: test my application
 on: [push]
 jobs:
-  test:
+  build:
     name: GradleTest
     runs-on: ubuntu-latest
-
     steps:
+      - name: 🛎 Checkout
+        uses: actions/checkout@v2
       - name: checkout
         uses: actions/checkout@v2
 
